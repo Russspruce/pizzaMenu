@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="script.js"></script>
+    <title>Pizza Menu</title>
+  </head>
+  <body>
+    <div class="container">
+     <div class="jumbotron">
+      <h1>Tommy's Pizza For You!</h1>
+     </div>
+     <form id="pizzaForm">
+       <h2>Pick-Up or Delivery?</h2>
+       <button type="button" class="btn btn-secondary" id="pickUpButton">Pick-Up</button>
+       <button type="button" class="btn btn-info" id="deliveryButton">Delivery</button>
+       <div class="form-group" id="nameInfo">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name">
+       </div>
+       <div class="form-group" id="addressInfo">
+         <label for="address">Address:</label>
+         <input type="text" class="form-control" id="address">
+      </div>
+      <div class="form-group">
+        <div class="radio">
+            <label>
+              <input type="radio" name="pieSize" value="1">
+               Small (2-4 people)
+            </label>
+        </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="pieSize" value="2">
+                Medium (3-5 people)
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="pieSize" value="3">
+              Large (6-8 people)
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="pieSize" value="4">
+              Extra Large (10-12 people)
+            </label>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <div class="radio">
+           <label>
+              <input type="radio" name="toppingsPizza" value="1">
+               Cheese
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="toppingsPizza" value="2">
+                Pepperoni
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="toppingsPizza" value="3">
+              Veggies
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="toppingsPizza" value="4">
+              Meat Pick
+            </label>
+          </div>
+          <div class="radio">
+           <label>
+           <input type="radio" name="toppingsPizza" value="5">
+            Supreme
+           </label>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <div class="radio">
+            <label>
+              <input type="radio" name="doughChoice" value="1">
+               Regular
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="doughChoice" value="2">
+                Garlic
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="doughChoice" value="3">
+              Whole Wheat
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="doughChoice" value="4">
+              Gluten Free
+            </label>
+          </div>
+        </div>
+       <button type="submit" class="btn btn-primary">Submit Order</button>
+     </form>
+ </body>
+</html>

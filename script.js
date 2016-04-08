@@ -1,56 +1,61 @@
-function Pizza (dough, toppings, pieSize) {
-  this.dough = dough;
-  this.toppings = toppings;
-  this.pieSize = pieSize;
+function Pizza (pieSize, toppings, dough) {
+  this.pizzaPieSize = pieSize;
+  this.pizzaToppings = toppings;
+  this.pizzaDough = dough;
 }
 
-Pizza.prototype.totalCostPizza = function(dough, toppings, pieSize) {
+Pizza.prototype.totalCostPizza = function() {
 
   var totalOrder = 0;
-
-  if (this.dough === 1) { //regular
-    totalOrder += 1;
-  }
-
-  if (this.dough === 2) { //garlic
-    totalOrder += 2;
-  }
-
-  if (this.dough === 3) { //whole wheat
-    totalOrder += 3;
-  }
-
-  if (this.dough === 4) { //gluten free
-    totalOrder += 4;
-  }
-
-  if (this.toppings === 1 || this.toppings === 2) {
-    totalOrder += 2;
-  }
-
-  if (this.toppings === 3 || this.toppings === 4) {
-    totalOrder += 3;
-  }
-
-  if (this.toppings === 5) {
-    totalOrder += 4;
-  }
-
-   if (this.pieSize === 1) { //small
-     totalOrder += 0;
+// debugger;
+   if (this.pizzaPieSize === 1) { //medium
+   totalOrder += 1;
    }
-   if (this.pieSize === 2) { //medium
-     totalOrder += 1;
-   }
-   if (this.pieSize === 3) { //large
+
+   if (this.pizzaPieSize === 2) { //medium
      totalOrder += 2;
    }
-   if (this.pieSize === 4) {
+   if (this.pizzaPieSize === 3) { //large
+     totalOrder += 3;
+   }
+   if (this.pizzaPieSize === 4) { //Xrtra large
      totalOrder += 4;
    }
-  //  if (this. === 2) {
-  //    totalOrder += 2;
-  //  }
+
+   if (this.pizzaToppings === "Cheese") {
+     totalOrder += 2;
+   }
+   if (this.pizzaToppings === "Pepperoni") {
+     totalOrder += 2;
+   }
+
+   if (this.pizzaToppings === "Veggie") {
+     totalOrder += 3;
+   }
+   if (this.pizzaToppings === "Meat") {
+     totalOrder += 3;
+   }
+
+   if (this.pizzaToppings === "Supreme") {
+     totalOrder += 4;
+   }
+
+   if (this.pizzaDough === 1) { //regular
+     totalOrder += 1;
+   }
+
+   if (this.pizzaDough === 2) { //garlic
+     totalOrder += 2;
+   }
+
+   if (this.pizzaDough === 3) { //whole wheat
+     totalOrder += 3;
+   }
+
+   if (this.pizzaDough === 4) { //gluten free
+     totalOrder += 4;
+   }
+
 
    return totalOrder;
  }
@@ -68,24 +73,30 @@ $(document).ready(function() {
    $('#addressInfo').toggle();
    });
 
- $("form#pizzaToppings").submit(function(event) {
+ $("form#pizzaForm").submit(function(event) {
    event.preventDefault();
-
+    // debugger;
    var inputName = $("input#name").val();
    var inputAddress = $("input#address").val();
-   var inputToppings = parseInt($("input#toppingsPizza").val());
-   var inputDough = parseInt($("input#doughChoice").val());
-   var inputPizzaSize = parseInt($("input#pieSize").val());
-   var newPizza = new Pizza(inputDough, inputToppings, inputPizzaSize);
+   var inputToppings = $("input:radio[name=toppingsPizza]:checked").val();
+   var inputDough = parseInt($("input:radio[name=doughChoice]:checked").val());
+   var inputPizzaSize = parseInt($("input:radio[name=pieSize]:checked").val());
+   var newPizza = new Pizza(inputPizzaSize, inputToppings, inputDough);
+debugger;
+   var result = newPizza.totalCostPizza();
+  var test = ("hello");
 
-   var pizzaPieOrder = newPizza.totalOrder();
+ $("ul#pizzaPizzaOrder").append("<li><span class='pizzaPieForYou'>"+inputName+"</span></li>");
 
-   $("#showPizzaRecipt").submit(function() {
+ $(".pizzaPieForYou").last().click(function() {
     $("#showPizzaRecipt").show();
+    $("#showPortland h2").text(inputName);
     $("#pizzaName").text(inputName);
-    $("#deliveryAddress")
-    $("#pizzaTotalCost").text(pizzaPieOrder);
-
+    $("#deliveryAddress").text(inputAddress);
+    $("#pieToppings").text(inputToppings);
+    $("#result").text(result);
   });
+
+
  });
 });

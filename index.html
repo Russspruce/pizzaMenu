@@ -2,6 +2,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="animate.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="script.js"></script>
@@ -10,12 +11,13 @@
   <body>
     <div class="container">
      <div class="jumbotron">
+       <img src="slice.png" id="sliceOfPizza" class="animated rollIn">
       <h1>Tommy's Pizza For You!</h1>
      </div>
      <form id="pizzaForm">
        <h2>Pick-Up or Delivery?</h2>
-       <button type="button" class="btn btn-secondary" id="pickUpButton">Pick-Up</button>
-       <button type="button" class="btn btn-info" id="deliveryButton">Delivery</button>
+       <button type="button" class="btn btn-success" id="pickUpButton">Pick-Up</button>
+       <button type="button" class="btn btn-danger" id="deliveryButton">Delivery</button>
        <div class="form-group" id="nameInfo">
         <label for="name">Name:</label>
         <input type="text" class="form-control" id="name">
@@ -25,6 +27,7 @@
          <input type="text" class="form-control" id="address">
       </div>
       <div class="form-group">
+        <label>Pie Size:</label>
         <div class="radio">
             <label>
               <input type="radio" name="pieSize" value="1">
@@ -52,43 +55,45 @@
         </div>
 
       <div class="form-group">
+        <label>Topping: </label>
         <div class="radio">
            <label>
-              <input type="radio" name="toppingsPizza" value="1">
+              <input type="radio" name="toppingsPizza" value="Cheese">
                Cheese
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="toppingsPizza" value="2">
+              <input type="radio" name="toppingsPizza" value="Pepperoni">
                 Pepperoni
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="toppingsPizza" value="3">
+              <input type="radio" name="toppingsPizza" value="Veggie">
               Veggies
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="toppingsPizza" value="4">
+              <input type="radio" name="toppingsPizza" value="Meat">
               Meat Pick
             </label>
           </div>
           <div class="radio">
            <label>
-           <input type="radio" name="toppingsPizza" value="5">
+           <input type="radio" name="toppingsPizza" value="Supreme">
             Supreme
            </label>
           </div>
       </div>
 
       <div class="form-group">
+        <label>Dough: </label>
         <div class="radio">
-            <label>
+           <label>
               <input type="radio" name="doughChoice" value="1">
-               Regular
+               Classic
             </label>
           </div>
           <div class="radio">
@@ -109,8 +114,20 @@
               Gluten Free
             </label>
           </div>
-        </div>
-       <button type="submit" class="btn btn-primary">Submit Order</button>
+      </div>
+       <button type="submit" class="btn btn-primary" id="submitPizzaOrder">Submit Order</button>
      </form>
+     <h2>Orders:</h2>
+     <ul id="pizzaPizzaOrder">
+
+          </ul>
+     <div id="showPizzaRecipt">
+       <h2></h2>
+       <p>Name: <span id="pizzaName"></span></p>
+       <p>Address: <span id="pizzaAddress"></span><p>
+       <p>Toppings: <span id="pieToppings"></span><p>
+       <p>Price: <span id="result"></span></p>
+     </div>
+   </div>
  </body>
 </html>

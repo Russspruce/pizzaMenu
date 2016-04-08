@@ -5,3 +5,33 @@
  #addressInfo {
    display:none;
  }
+
+ .jumbotron {
+   background-color: #D10606;
+   color: #FFBF00;
+ }
+
+.btn {
+  margin-bottom: 20px;
+}
+
+body {
+  background-color: #F0D890;
+}
+
+#showPizzaRecipt {
+  display: none;
+}
+#sliceOfPizza {
+  width: 225px;
+  float: right;
+}
+
+.pizzaPieForYou {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.pizzaPieForYou:hover {
+  text-decoration: underline;
+}

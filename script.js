@@ -82,17 +82,16 @@ $(document).ready(function() {
    var inputDough = parseInt($("input:radio[name=doughChoice]:checked").val());
    var inputPizzaSize = parseInt($("input:radio[name=pieSize]:checked").val());
    var newPizza = new Pizza(inputPizzaSize, inputToppings, inputDough);
-debugger;
+
    var result = newPizza.totalCostPizza();
   var test = ("hello");
-
  $("ul#pizzaPizzaOrder").append("<li><span class='pizzaPieForYou'>"+inputName+"</span></li>");
 
  $(".pizzaPieForYou").last().click(function() {
     $("#showPizzaRecipt").show();
     $("#showPortland h2").text(inputName);
     $("#pizzaName").text(inputName);
-    $("#deliveryAddress").text(inputAddress);
+    $("#pizzaAddress").text(inputAddress);
     $("#pieToppings").text(inputToppings);
     $("#result").text(result);
   });
